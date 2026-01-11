@@ -34,4 +34,6 @@ COPY --from=builder /usr/local/bin /usr/local/bin
 COPY --from=builder /app /app
 
 EXPOSE 5000
-CMD ["gunicorn", "-b", "0.0.0.0:5000", "src.app:app"]
+CMD ["gunicorn", "src.app:create_app()", "-b", "0.0.0.0:5000"]
+
+
