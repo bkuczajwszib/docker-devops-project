@@ -17,7 +17,9 @@ COPY app/ .
 # =========================
 # STAGE 2: TEST
 # =========================
+
 FROM builder AS test
+ENV PYTHONPATH=/app
 RUN pytest
 
 # =========================
